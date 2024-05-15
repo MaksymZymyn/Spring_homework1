@@ -1,0 +1,18 @@
+server:
+  port: 9000
+  error:
+    path: /error
+
+spring:
+  mvc:
+    cors:
+      allowed-origins:
+        - "http://localhost:3000"
+      allowed-methods:
+        - GET
+        - POST
+        - PUT
+        - DELETE
+      allowed-headers:
+        - Authorization
+        - Content-Type
