@@ -7,6 +7,7 @@ import java.util.UUID;
 @Setter
 @Getter
 @EqualsAndHashCode(of = "number")
+@ToString(exclude = "customer")
 @JsonFilter("accountFilter")
 public class Account {
     private Long id = null;
@@ -18,15 +19,5 @@ public class Account {
     public Account(Currency currency, Customer customer) {
         this.currency = currency;
         this.customer = customer;
-    }
-
-    @Override
-    public String toString() {
-        return "Account{" +
-                "id=" + id +
-                ", number='" + number + '\'' +
-                ", currency=" + currency +
-                ", balance=" + balance +
-                '}';
     }
 }

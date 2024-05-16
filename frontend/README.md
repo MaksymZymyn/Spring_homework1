@@ -73,6 +73,7 @@ To open the terminal in VS Code:
 Ctrl + `
 
 The commands:
+npm install
 npm install @mui/material @mui/icons-material @emotion/react @emotion/styled
 cd desktop // if you need
 npm run build
