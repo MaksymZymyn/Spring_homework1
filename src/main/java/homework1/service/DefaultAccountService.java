@@ -53,14 +53,14 @@ public class DefaultAccountService implements AccountService {
     }
 
     @Override
-    public Account deposit(String number, Double amount) {
+    public Account deposit(String number, double amount) {
         if (amount <= 0) {
             throw new IllegalArgumentException("Deposit amount must be greater than zero");
         }
 
         Account account = accountDao.findByNumber(number);
         if (account != null) {
-            Double balance = account.getBalance();
+            double balance = account.getBalance();
             account.setBalance(balance + amount);
             return account;
         } else {
@@ -69,7 +69,7 @@ public class DefaultAccountService implements AccountService {
     }
 
     @Override
-    public boolean withdraw(String accountNumber, Double amount) {
+    public boolean withdraw(String accountNumber, double amount) {
         Account account = accountDao.findByNumber(accountNumber);
         if (account.getBalance() >= amount && amount > 0) {
             account.setBalance(account.getBalance() - amount);
@@ -80,7 +80,7 @@ public class DefaultAccountService implements AccountService {
     }
 
     @Override
-    public void transfer(String fromAccountNumber, String toAccountNumber, Double amount) {
+    public void transfer(String fromAccountNumber, String toAccountNumber, double amount) {
         if (fromAccountNumber.equals(toAccountNumber)) {
             throw new IllegalArgumentException("From and To account numbers cannot be the same");
         }

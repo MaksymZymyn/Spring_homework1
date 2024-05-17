@@ -23,7 +23,7 @@ public interface CustomerService {
 
     Customer update(Customer customer);
 
-    void createAccount(Long customerId, Currency currency, Double amount);
+    void createAccount(Long customerId, Currency currency, double amount);
 
     void deleteAccount(Long customerId, String accountNumber);
 

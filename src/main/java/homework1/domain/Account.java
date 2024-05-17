@@ -13,7 +13,7 @@ public class Account {
     private Long id = null;
     private final String number = UUID.randomUUID().toString();
     private Currency currency;
-    private Double balance = 0.0;
+    private double balance = 0.0;
     private Customer customer;
 
     public Account(Currency currency, Customer customer) {

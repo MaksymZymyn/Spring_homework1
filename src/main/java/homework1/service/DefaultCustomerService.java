@@ -100,7 +100,7 @@ public class DefaultCustomerService implements CustomerService {
     }
 
     @Override
-    public void createAccount(Long customerId, Currency currency, Double amount) {
+    public void createAccount(Long customerId, Currency currency, double amount) {
         Customer customer = customerDao.getById(customerId);
 
         if (customer == null) {

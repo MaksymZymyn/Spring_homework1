@@ -23,9 +23,9 @@ public interface AccountService {
 
     Account findByNumber(String accountNumber);
 
-    Account deposit(String number, Double amount);
+    Account deposit(String number, double amount);
 
-    boolean withdraw(String accountNumber, Double amount);
+    boolean withdraw(String accountNumber, double amount);
 
-    void transfer(String from, String to, Double amount);
+    void transfer(String from, String to, double amount);
 }

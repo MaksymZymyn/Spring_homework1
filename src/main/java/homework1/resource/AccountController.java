@@ -74,7 +74,7 @@ public class AccountController {
                     content = @Content)
     })
     @PutMapping("/deposit/{accountNumber}")
-    public ResponseEntity<?> deposit(@PathVariable String accountNumber, @RequestBody Double amount) {
+    public ResponseEntity<?> deposit(@PathVariable String accountNumber, @RequestBody double amount) {
         try {
             Account updatedAccount = accountService.deposit(accountNumber, amount);
             return ResponseEntity.ok(updatedAccount);
@@ -99,7 +99,7 @@ public class AccountController {
     })
     @PutMapping("/withdrawal/{accountNumber}")
     public ResponseEntity<?> withdraw(@PathVariable String accountNumber,
-                                      @RequestBody Double amount) {
+                                      @RequestBody double amount) {
         try {
             boolean withdrawalSuccessful = accountService.withdraw(accountNumber, amount);
             if (withdrawalSuccessful) {
@@ -124,7 +124,7 @@ public class AccountController {
     @PutMapping("/transfer/{fromAccountNumber}/{toAccountNumber}")
     public ResponseEntity<?> transfer(@PathVariable String fromAccountNumber,
                                       @PathVariable String toAccountNumber,
-                                      @RequestBody Double amount) {
+                                      @RequestBody double amount) {
         try {
             accountService.transfer(fromAccountNumber, toAccountNumber, amount);
             return ResponseEntity.ok("Transfer successful");

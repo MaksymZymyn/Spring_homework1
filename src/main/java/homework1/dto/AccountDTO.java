@@ -8,5 +8,5 @@ import lombok.*;
 @AllArgsConstructor
 public class AccountDTO {
     private Currency currency;
-    private Double balance;
+    private double balance;
 }
